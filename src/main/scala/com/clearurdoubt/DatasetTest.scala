@@ -9,8 +9,11 @@ object DatasetTest extends App {
     .master("local[*]")
     .getOrCreate()
 
+
   val ds = spark.read.textFile("src/main/resources/README.md")
   ds.show(truncate = false)
+
+  val test = true
 
   val firstLine: String = ds.first
   println("firstLine: " + firstLine)
