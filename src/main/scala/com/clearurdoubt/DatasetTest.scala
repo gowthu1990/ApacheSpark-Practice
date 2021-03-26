@@ -9,7 +9,6 @@ object DatasetTest extends App {
     .master("local[*]")
     .getOrCreate()
 
-
   val ds = spark.read.textFile("src/main/resources/README.md")
   ds.show(truncate = false)
 
@@ -25,6 +24,5 @@ object DatasetTest extends App {
     .format("text")
     .save("target/textOutput")
 
-  spark.stop()
 }
 
